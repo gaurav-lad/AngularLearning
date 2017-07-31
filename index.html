@@ -73,7 +73,7 @@
                 <tr ng-repeat="employee in employee">
                     <td>{{employee.firstName}}</td>
                     <td>{{employee.lastName}}</td>
-                    <td>{{employee.gender}}</td>
+                    <td>{{employee.gender | gender}}</td>
                     <td>{{employee.salary}}</td>
                     <td>{{employee.city}}</td>
                 </tr>
@@ -172,7 +172,7 @@
                 <tr ng-repeat="employee in employee | orderBy:sortColumn:reverseSort | filter:searchText:exactMatch:search">
                     <td>{{employee.firstName | uppercase}}</td>
                     <td>{{employee.dateOfBirth | date:"dd/MM/yyyy"}}</td>
-                    <td>{{employee.gender | lowercase}}</td>
+                    <td>{{employee.gender | lowercase | gender}}</td>
                     <td>{{employee.salary | number:2}}</td>
                     <td>{{employee.salary | currency:"$":1}}</td>
                     <td>{{employee.city | uppercase}}</td>

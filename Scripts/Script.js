@@ -10,14 +10,26 @@ var myApp = angular
         }
         $scope.message = "Hello Angular!!!";
         $scope.country = country;
+    })    
+    .filter("gender", function (){
+        return function (gender) {
+            switch (gender) {
+                case 1:
+                return "male";
+                case 2:
+                return "female";
+                case 3:
+                return "not disclosed";
+            }
+        }
     })
     .controller("empController", function ($scope) {
         var employee = [
-            { firstName: "gaurav", lastName: "lad", gender: "male", salary: 1233231.39, dateOfBirth: new Date("November 23, 1980"), city: "London" },
-            { firstName: "rajat", lastName: "gupta", gender: "female", salary: 456323.1, dateOfBirth: new Date("May 23, 2000"), city: "London" },
-            { firstName: "raghu", lastName: "manaava", gender: "male", salary: 789.31, dateOfBirth: new Date("July 23, 1988"), city: "Pune" },
-            { firstName: "umang", lastName: "mishra", gender: "female", salary: 12.23, dateOfBirth: new Date("January 01, 1990"), city: "Chennai" },
-            { firstName: "dhaval", lastName: "patel", gender: "male", salary: 345.20, dateOfBirth: new Date("November 03, 1980"), city: "India" }
+            { firstName: "gaurav", lastName: "lad", gender: 1, salary: 1233231.39, dateOfBirth: new Date("November 23, 1980"), city: "London" },
+            { firstName: "rajat", lastName: "gupta", gender: 2, salary: 456323.1, dateOfBirth: new Date("May 23, 2000"), city: "London" },
+            { firstName: "raghu", lastName: "manaava", gender: 2, salary: 789.31, dateOfBirth: new Date("July 23, 1988"), city: "Pune" },
+            { firstName: "umang", lastName: "mishra", gender: 1, salary: 12.23, dateOfBirth: new Date("January 01, 1990"), city: "Chennai" },
+            { firstName: "dhaval", lastName: "patel", gender: 1, salary: 345.20, dateOfBirth: new Date("November 03, 1980"), city: "India" }
         ];
         $scope.employee = employee;
         $scope.sortColumn = "firstName";
