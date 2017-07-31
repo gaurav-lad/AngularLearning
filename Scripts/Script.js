@@ -11,18 +11,7 @@ var myApp = angular
         $scope.message = "Hello Angular!!!";
         $scope.country = country;
     })    
-    .filter("gender", function (){
-        return function (gender) {
-            switch (gender) {
-                case 1:
-                return "male";
-                case 2:
-                return "female";
-                case 3:
-                return "not disclosed";
-            }
-        }
-    })
+
     .controller("empController", function ($scope) {
         var employee = [
             { firstName: "gaurav", lastName: "lad", gender: 1, salary: 1233231.39, dateOfBirth: new Date("November 23, 1980"), city: "London" },
