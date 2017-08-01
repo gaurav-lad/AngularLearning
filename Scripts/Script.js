@@ -10,7 +10,7 @@ var myApp = angular
         }
         $scope.message = "Hello Angular!!!";
         $scope.country = country;
-    })    
+    })
 
     .controller("empController", function ($scope) {
         var employee = [

@@ -59,13 +59,18 @@
     </div>
     <br/>
     <div ng-controller="empController">
+
+        <input type="checkbox" ng-model="hideSalary" /> Hide salary
+        </br>
+        </br>
         <table>
             <thead>
                 <tr>
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Gender</th>
-                    <th>Salary</th>
+                    <th ng-hide="hideSalary">Salary</th>
+                    <th ng-show="hideSalary">Salary</th>
                     <th>City</th>
                 </tr>
             </thead>
@@ -74,7 +79,8 @@
                     <td>{{employee.firstName}}</td>
                     <td>{{employee.lastName}}</td>
                     <td>{{employee.gender | gender}}</td>
-                    <td>{{employee.salary}}</td>
+                    <td ng-hide="hideSalary">{{employee.salary}}</td>
+                    <td ng-show="hideSalary">####</td>
                     <td>{{employee.city}}</td>
                 </tr>
             </tbody>
@@ -121,17 +127,13 @@
     <div ng-controller="empController">
 
         Rows to display: <input type="number" step="1" min="0" max="5" ng-model="rowLimit" />
-        <br/><br/>
+        <br/><br/> Search everywhere: <input type="text" placeholder="Search employees" ng-model="searchText.firstName" />        Search City: <input type="text" placeholder="Search city only" ng-model="searchText.city" /> Search City and name:
+        <input type="text" placeholder="Search city and name" ng-model="searchText" />
 
-        Search everywhere: <input type="text" placeholder="Search employees" ng-model="searchText.firstName" />
 
-        Search City: <input type="text" placeholder="Search city only" ng-model="searchText.city"/>
-
-        Search City and name: <input type="text" placeholder="Search city and name" ng-model="searchText"/>
-
-                
-        <input type="checkbox" ng-model="exactMatch"/> Exact Match
-        </br></br>
+        <input type="checkbox" ng-model="exactMatch" /> Exact Match
+        </br>
+        </br>
 
         <!-- Order by : <select ng-model="sortColumn" >
                     <option value="firstName">Name ASC</option>
