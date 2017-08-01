@@ -181,6 +181,33 @@
             </tbody>
         </table>
     </div>Í
+    </br>
+    </br>
+    <div ng-init="employees = [
+            { firstName: 'gaurav', gender: 'Male', city: 'London' },
+            { firstName: 'rajat', gender: 'Male', city: 'London' },
+            { firstName: 'raghu', gender: 'female', city: 'Pune' },
+            { firstName: 'umang', gender: 'Male', city: 'Chennai' },
+            { firstName: 'dhaval', gender: 'female', city: 'India' }
+        ]">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>City</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employees in employees">
+                    <td>{{employees.firstName}}</td>
+                    <td>{{employees.gender}}</td>
+                    <td>{{employees.city}}</td>
+                    
+                
+                </tr>
+
+
 </body>
 
 </html>
