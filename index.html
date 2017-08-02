@@ -180,9 +180,12 @@
                     <td>{{employee.city | uppercase}}</td>
             </tbody>
         </table>
-    </div>Í
+    </div>
     </br>
     </br>
+    <!--Below is not an idea way, better way is to use controller
+    in Script.js, ng-init is used mostly for dynamic var like
+    to find parent of index  -->
     <div ng-init="employees = [
             { firstName: 'gaurav', gender: 'Male', city: 'London' },
             { firstName: 'rajat', gender: 'Male', city: 'London' },
@@ -203,11 +206,12 @@
                     <td>{{employees.firstName}}</td>
                     <td>{{employees.gender}}</td>
                     <td>{{employees.city}}</td>
-                    
-                
                 </tr>
-
-
+            </tbody>
+        </table>
+    </div>
+    </br>
+    </br>
 </body>
 
 </html>
