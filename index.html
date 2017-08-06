@@ -180,6 +180,17 @@
                     <td>{{employee.city | uppercase}}</td>
             </tbody>
         </table>
+        </br></br>
+        <div ng-include="'EmployeeTable.html'"></div>
+        </br></br>
+    Select view :
+    <select ng-model="employeeView">
+        <option value = "EmployeeTable.html">Table</option>
+        <option value = "EmployeeList.html">List</option>
+    </select>
+    <br/><br/>
+        <div ng-include="employeeView"></div>
+        
     </div>
     </br>
     </br>
@@ -212,6 +223,8 @@
     </div>
     </br>
     </br>
+
+
 </body>
 
 </html>

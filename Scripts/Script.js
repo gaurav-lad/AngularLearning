@@ -23,6 +23,7 @@ var myApp = angular
         $scope.employee = employee;
         $scope.sortColumn = "firstName";
         $scope.reverseSort = false;
+        $scope.employeeView = "EmployeeTable.html";
         $scope.sortData = function (column){
             $scope.reverseSort = ($scope.sortColumn == column) ? !$scope.reverseSort : false;
             $scope.sortColumn = column;
